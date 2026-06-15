@@ -2,160 +2,201 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriZakat Prototype - Esai Tani Mandiri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>AgriZakat Modern - Esai Tani Mandiri</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="phone-container">
-        <div class="phone-notch"></div>
+<div class="phone-container">
+    <div class="dynamic-island"></div>
 
-        <div class="alert-toast" id="appToast">
-            ⛓️ <strong>Blockchain Alert:</strong> Block baru terverifikasi untuk Zakat Produktif Anda!
-        </div>
-
-        <header class="app-header">
-            <h1>AgriZakat</h1>
-            <p>Empowering Mustahik Farmers</p>
-        </header>
-
-        <main class="app-content" id="appContent">
-
-            <section id="view-dashboard" class="view-section active">
-                <div class="card">
-                    <div class="card-title">👋 Selamat Datang, Pak Ahmad</div>
-                    <p style="font-size: 9.5pt; margin: 0; color:#4a5568;">Kelompok Tani: <strong>Suka Maju (Cianjur)</strong></p>
-                </div>
-
-                <div class="card">
-                    <div class="card-title">🌾 Status Bantuan Zakat</div>
-                    <div style="margin-bottom: 8px;">
-                        <span class="badge success">Disetujui & Cair</span>
-                    </div>
-                    <p style="font-size: 9pt; margin: 4px 0;">Program: <strong>Zakat Produktif Tani Mandiri</strong></p>
-                    <div class="progress-container">
-                        <div class="progress-bar"></div>
-                    </div>
-                    <div style="font-size: 8pt; color: #718096; margin-top: 4px; text-align: right;">Fase: Vegetatif (70%)</div>
-                </div>
-
-                <div class="ai-box">
-                    <div class="card-title" style="color: #2b6cb0; margin-bottom: 4px;">🤖 Rekomendasi AI Hari Ini</div>
-                    <p style="font-size: 9pt; margin: 0; color: #2d3748;">
-                        "Curah hujan tinggi terdeteksi di Cianjur 3 hari ke depan. Disarankan optimalkan saluran irigasi & tunda pemupukan NPK agar tidak larut air."
-                    </p>
-                </div>
-            </section>
-
-            <section id="view-bantuan" class="view-section">
-                <div class="card">
-                    <div class="card-title">📦 Alokasi Zakat Produktif</div>
-                    <p style="font-size: 9pt; margin-top:0;">Daftar bantuan modal non-tunai yang Anda terima periode ini:</p>
-                    
-                    <div class="grid-2">
-                        <div class="grid-cell">
-                            <div class="item-box">
-                                <strong>50 KG</strong>
-                                Pupuk Organik
-                            </div>
-                        </div>
-                        <div class="grid-cell">
-                            <div class="item-box">
-                                <strong>20 KG</strong>
-                                Bibit Padi Unggul
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid-2" style="margin-top: 0;">
-                        <div class="grid-cell">
-                            <div class="item-box">
-                                <strong>1 Paket</strong>
-                                Biopestisida
-                            </div>
-                        </div>
-                        <div class="grid-cell">
-                            <div class="item-box">
-                                <strong>Rp 1.500.000</strong>
-                                Saldo Digital Ops
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-title">🌱 Dampak & Progress Lahan</div>
-                    <p style="font-size: 9pt; margin: 2px 0;">Luas Lahan: <strong>0.5 Hektar</strong></p>
-                    <p style="font-size: 9pt; margin: 2px 0;">Estimasi Panen: <strong>3.2 Ton Padi</strong></p>
-                    <p style="font-size: 9pt; margin: 2px 0; color: #2f855a;">Proyeksi Kenaikan Pendapatan: <strong>+45%</strong></p>
-                </div>
-            </section>
-
-            <section id="view-blockchain" class="view-section">
-                <div class="card">
-                    <div class="card-title">⛓️ Tracking Blockchain Real-Time</div>
-                    <p style="font-size: 8.5pt; color:#4a5568; margin-top:0;">Transparansi penuh penyaluran dana muzakki tanpa manipulasi.</p>
-                    
-                    <div class="ledger-row">
-                        <strong>Dana Disalurkan ke Saldo Petani</strong><br>
-                        <span style="color:#718096; font-size:8pt;">15 Juni 2026 - 10:30 WIB</span>
-                        <span class="hash-text">TX: 0x8f3c...b291a (Verified)</span>
-                    </div>
-
-                    <div class="ledger-row">
-                        <strong>Pembelian Bibit & Pupuk Terkonfirmasi</strong><br>
-                        <span style="color:#718096; font-size:8pt;">12 Juni 2026 - 14:15 WIB</span>
-                        <span class="hash-text">TX: 0x4a1e...9921f (Verified)</span>
-                    </div>
-
-                    <div class="ledger-row">
-                        <strong>Alokasi Dana oleh Lembaga Zakat</strong><br>
-                        <span style="color:#718096; font-size:8pt;">10 Juni 2026 - 09:00 WIB</span>
-                        <span class="hash-text">TX: 0x7d6b...1102e (Verified)</span>
-                    </div>
-                </div>
-            </section>
-
-            <section id="view-mentor" class="view-section">
-                <div class="card">
-                    <div class="card-title">💬 Pendampingan & Edukasi</div>
-                    <p style="font-size: 8.5pt; color:#4a5568; margin-top:0;">Konsultasi langsung dengan agronomis dan amil zakat.</p>
-                    
-                    <div class="chat-bubble">
-                        Assalamualaikum Pak Ahmad, bagaimana kondisi daun padi setelah disemprot biopestisida kemarin?
-                    </div>
-                    <div class="chat-bubble user">
-                        Waalaikumsalam wr. wb. Alhamdulillah ulat grayak sudah berkurang drastis pak mentor.
-                    </div>
-                    <div class="chat-bubble">
-                        Bagus sekali. Pastikan jaga kelembaban tanah ya pak.
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-        <nav class="app-nav">
-            <div class="nav-item active" onclick="switchView('view-dashboard', this)">
-                <span class="nav-icon">🏠</span>
-                Beranda
-            </div>
-            <div class="nav-item" onclick="switchView('view-bantuan', this)">
-                <span class="nav-icon">🌾</span>
-                Bantuan
-            </div>
-            <div class="nav-item" onclick="switchView('view-blockchain', this)">
-                <span class="nav-icon">📊</span>
-                Audit
-            </div>
-            <div class="nav-item" onclick="switchView('view-mentor', this)">
-                <span class="nav-icon">💬</span>
-                Konsul
-            </div>
-        </nav>
+    <!-- Toast notifikasi modern -->
+    <div class="alert-toast" id="appToast">
+        <span><i class="fa-solid fa-link"></i></span> <strong>Blockchain Verified</strong> — Data transaksi baru tersimpan di ledger.
     </div>
 
-    <script src="script.js"></script>
+    <header class="app-header">
+        <h1>AgriZakat</h1>
+        <p>Zakat produktif • transparansi on-chain</p>
+    </header>
+
+    <main class="app-content" id="appContent">
+        <!-- DASHBOARD MODERN -->
+        <section id="view-dashboard" class="view-section active">
+            <div class="card">
+                <div class="card-title">
+                    <span>👋</span> Selamat Datang, Pak Ahmad
+                </div>
+                <div class="sub-text">
+                    Kelompok Tani: <strong>Suka Maju (Cianjur)</strong> · Anggota aktif
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🌾 Status Bantuan Zakat</div>
+                <div style="margin-bottom: 12px;">
+                    <span class="badge success">✅ Tersalurkan & Aktif</span>
+                </div>
+                <p style="font-size: 14px; font-weight: 500;">Program: <strong>Zakat Produktif Tani Mandiri</strong></p>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px;">
+                    <span>🌱 Musim Tanam I</span>
+                    <span style="font-weight: 600;">Fase Vegetatif · 70%</span>
+                </div>
+            </div>
+
+            <div class="ai-box">
+                <div class="card-title" style="margin-bottom: 8px;">🤖 AI Agri-Analytics</div>
+                <p style="font-size: 13.5px; line-height: 1.4; color: #1E3A2F;">
+                    ☔ Curah hujan tinggi 3 hari ke depan (Cianjur). Optimalkan drainase & tunda pemupukan NPK agar tidak larut. 
+                    <br>➜ <strong>Saran: aplikasi pupuk organik cair lebih efektif.</strong>
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📈 Proyeksi Hasil</div>
+                <div class="stats-row">
+                    <div class="stat-block"><div class="stat-number">0.5 Ha</div><span class="sub-text">Lahan Garap</span></div>
+                    <div class="stat-block"><div class="stat-number">3.2 Ton</div><span class="sub-text">Estimasi Panen</span></div>
+                    <div class="stat-block"><div class="stat-number" style="color:#1B6B4C;">+45%</div><span class="sub-text">Pendapatan</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BANTUAN MODERN -->
+        <section id="view-bantuan" class="view-section">
+            <div class="card">
+                <div class="card-title">📦 Alokasi Zakat Produktif</div>
+                <p class="sub-text" style="margin-bottom: 12px;">Bantuan modal non-tunai & pendukung operasional</p>
+                
+                <div class="grid-modern">
+                    <div class="item-box">
+                        <strong>50 KG</strong>
+                        <span>Pupuk Organik</span>
+                    </div>
+                    <div class="item-box">
+                        <strong>20 KG</strong>
+                        <span>Bibit Padi Unggul</span>
+                    </div>
+                    <div class="item-box">
+                        <strong>1 Paket</strong>
+                        <span>Biopestisida</span>
+                    </div>
+                    <div class="item-box">
+                        <strong>Rp1.5 Jt</strong>
+                        <span>Saldo Digital Ops</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🌱 Dampak Sosial & Ekonomi</div>
+                <div class="stats-row">
+                    <div class="stat-block"><div class="stat-number">3 Pekerja</div><span>Terserap</span></div>
+                    <div class="stat-block"><div class="stat-number">2.2 Ha</div><span>Ekosistem Berkelanjutan</span></div>
+                </div>
+                <div class="progress-container" style="margin-top: 12px;">
+                    <div class="progress-bar" style="width: 86%; background: #3B9B78;"></div>
+                </div>
+                <div class="sub-text" style="margin-top: 8px;">💡 86% target keberlanjutan tercapai</div>
+            </div>
+        </section>
+
+        <!-- BLOCKCHAIN / AUDIT section dengan style premium -->
+        <section id="view-blockchain" class="view-section">
+            <div class="card">
+                <div class="card-title">⛓️ Blockchain Immutable Ledger</div>
+                <p class="sub-text">Setiap transaksi diverifikasi & terekam secara on-chain, tidak dapat diubah.</p>
+                
+                <div class="ledger-row">
+                    <strong>💰 Dana Disalurkan ke Saldo Petani</strong>
+                    <div style="font-size:11px; color:#4a6a5c;">15 Juni 2026 · 10:30 WIB</div>
+                    <span class="hash-text">🔗 0x8f3c...b291a | 12 konfirmasi</span>
+                </div>
+                <div class="ledger-row">
+                    <strong>🌾 Pembelian Bibit & Pupuk Terverifikasi</strong>
+                    <div style="font-size:11px; color:#4a6a5c;">12 Juni 2026 · 14:15 WIB</div>
+                    <span class="hash-text">🔗 0x4a1e...9921f | 18 konfirmasi</span>
+                </div>
+                <div class="ledger-row">
+                    <strong>🏦 Alokasi Dana Lembaga Zakat</strong>
+                    <div style="font-size:11px; color:#4a6a5c;">10 Juni 2026 · 09:00 WIB</div>
+                    <span class="hash-text">🔗 0x7d6b...1102e | Smart Contract Finalized</span>
+                </div>
+                <div class="ledger-row">
+                    <strong>📡 Staking Pertumbuhan Zakat</strong>
+                    <div style="font-size:11px; color:#4a6a5c;">08 Juni 2026 · Audit trail</div>
+                    <span class="hash-text">🔗 0xc8a9...332d5 | PoA verified</span>
+                </div>
+            </div>
+            <div class="ai-box" style="margin-bottom: 10px;">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <span>🔒</span> <strong style="font-size:13px;">Keamanan Data Zakat</strong>
+                </div>
+                <p class="sub-text" style="margin-top: 6px;">Teknologi end-to-end encryption & validasi peer-to-peer. Setiap perubahan tercatat abadi.</p>
+            </div>
+        </section>
+
+        <!-- MENTOR & KONSULTASI modern -->
+        <section id="view-mentor" class="view-section">
+            <div class="card">
+                <div class="card-title">💬 Pendampingan & Edukasi</div>
+                <p class="sub-text">Konsultasi dengan agronomis + amil zakat (real-time chat prototype)</p>
+                
+                <div style="margin-top: 14px;">
+                    <div class="chat-bubble">
+                        🧑‍🌾 <strong>Mentor Agung:</strong> Assalamualaikum Pak Ahmad, bagaimana kondisi daun padi setelah aplikasi biopestisida?
+                    </div>
+                    <div class="chat-bubble user">
+                        👨‍🌾 Waalaikumsalam, alhamdulillah ulat grayak sudah berkurang 80% pak.
+                    </div>
+                    <div class="chat-bubble">
+                        🌿 Bagus! Sekarang pastikan jaga kelembaban tanah dan segera lakukan penyiangan ringan.
+                    </div>
+                    <div class="chat-bubble user">
+                        Terima kasih bimbingannya, akan saya tindak lanjuti 🙏
+                    </div>
+                </div>
+                <div style="background: #F4FBF8; border-radius: 24px; padding: 12px; margin-top: 16px; text-align: center; font-size: 12px;">
+                    ⚡ <strong>Konsultasi aktif</strong> · Respon dalam < 10 menit
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title"><span class="nav-icon"><i class="fa-solid fa-book-open"></i></span> Materi Edukasi Mandiri</div>
+                <div class="item-box" style="background:#F9FCFB; text-align: left; display: flex; gap: 10px; align-items: center;">
+                    <span>📘</span> <span style="font-weight:500;">Panduan Pertanian Regeneratif & Zakat Pertanian</span>
+                </div>
+                <div class="item-box" style="background:#F9FCFB; text-align: left; display: flex; gap: 10px; align-items: center; margin-top: 8px;">
+                    <span>🎥</span> <span style="font-weight:500;">Webinar: Optimalisasi Hasil Panen dengan Blockchain</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="app-nav">
+        <div class="nav-item active" data-view="view-dashboard">
+            <span class="nav-icon"><i class="fa-solid fa-house"></i></span>
+            <span>Beranda</span>
+        </div>
+        <div class="nav-item" data-view="view-bantuan">
+            <span class="nav-icon"><i class="fa-solid fa-circle-question"></i></span>
+            <span>Bantuan</span>
+        </div>
+        <div class="nav-item" data-view="view-blockchain">
+            <span class="nav-icon"><i class="fa-solid fa-shield-halved"></i></span>
+            <span>Audit</span>
+        </div>
+        <div class="nav-item" data-view="view-mentor">
+            <span class="nav-icon"><i class="fa-solid fa-comments"></i></span>
+            <span>Konsul</span>
+        </div>
+    </nav>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
