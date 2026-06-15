@@ -22,7 +22,7 @@ Aplikasi diimplementasikan dalam bentuk *Single Page Application* (SPA) dengan n
    - Simulasi ruang komunikasi interaktif (*chat bubbles*) antara petani mustahik dengan mentor agronomis/amil zakat guna menjamin pemanfaatan zakat yang produktif dan berkelanjutan.
 
 📁 Struktur Dokumen Proyek
-Kode sumber telah dipisahkan secara modular sesuai standar industri (*Separation of Concerns*) menjadi 3 berkas mandiri[cite: 6]:
+Kode sumber telah dipisahkan secara modular sesuai standar industri (*Separation of Concerns*) menjadi 3 berkas mandiri:
 
 ```bash
 agrizakat_separated/
