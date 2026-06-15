@@ -35,7 +35,7 @@ agrizakat_separated/
 Prototipe ini dirancang dengan prinsip zero-config (dapat langsung berjalan tanpa perlu melakukan instalasi server lokal, database, atau koneksi internet)[cite: 6].
 
 1. Pastikan berkas index.html, style.css, dan script.js berada di dalam satu folder/direktori yang sama[cite: 6].
-2. Buka folder tersebut melalui File Explorer komputer Anda[cite: 6].
-3. Klik dua kali (double-click) pada file index.html[cite: 6].
-4. Aplikasi akan otomatis terbuka dan siap dioperasikan melalui browser pilihan Anda (Google Chrome, Mozilla Firefox, Microsoft Edge, atau Safari)[cite: 6].
+2. Buka folder tersebut melalui File Explorer komputer Anda.
+3. Klik dua kali (double-click) pada file index.html.
+4. Aplikasi akan otomatis terbuka dan siap dioperasikan melalui browser pilihan Anda (Google Chrome, Mozilla Firefox, Microsoft Edge, atau Safari.
 
