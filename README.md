@@ -4,37 +4,34 @@ AgriZakat adalah sebuah prototipe aplikasi mobile-first (berbasis web) yang dira
 Proyek ini dikembangkan khusus sebagai materi peraga interaktif (*interactive mockup*) untuk mendukung penyampaian ide, metodologi, dan solusi dalam Kompetisi Esai Ilmiah.
 
 🚀 Fitur Utama Prototype
-Aplikasi diimplementasikan dalam bentuk *Single Page Application* (SPA) dengan navigasi tab bawah (*bottom bar*) interaktif yang mensimulasikan 4 menu krusial platform:
+Aplikasi diimplementasikan dalam bentuk *Single Page Application* (SPA) dengan navigasi tab bawah (*bottom bar*) interaktif yang mensimulasikan 7 menu krusial platform:
 
-1. 🏠 Beranda (Dashboard Petani):
-   - Menampilkan ringkasan profil mustahik, status bantuan zakat (*real-time operational status*), serta grafik kemajuan fase tanam (*progress bar*).
-   - Rekomendasi AI Terintegrasi: Kotak rekomendasi pintar dinamis yang memberikan saran berbasis kondisi lingkungan nyata (misal: analisis curah hujan tinggi dan tindakan mitigasi irigasi).
+Dasbor ini dilengkapi dengan 7 tampilan dinamis (*Single Page Application style*) yang dapat diakses melalui bilah navigasi bawah:
 
-2. 🌾 Alokasi Bantuan (Zakat Productive):
-   - Transparansi pembagian modal usaha tani non-tunai dalam bentuk barang fisik (pupuk organik, bibit padi unggul, biopestisida) dan alokasi saldo digital untuk operasional lapangan.
-   - Proyeksi dampak ekonomi yang terukur (luas lahan, estimasi hasil panen dalam ton, dan persentase kenaikan pendapatan).
-
-3. 📊 Audit Sistem (Tracking Blockchain):
-   - Simulasi *ledger* transaksi yang *immutable* (tidak dapat dimanipulasi). Menampilkan riwayat aliran dana dari muzakki ke lembaga zakat hingga pencairan di tingkat petani lengkap dengan kode **Transaction Hash (TX Hash)**.
-   - **Interaksi Dinamis:** Dilengkapi fitur *pop-up toast alert* berbasis JavaScript yang menyimulasikan pembentukan blok baru yang terverifikasi saat juri membuka menu ini.
-
-4. 💬 Konsul (Pendampingan & Edukasi Syariah):
-   - Simulasi ruang komunikasi interaktif (*chat bubbles*) antara petani mustahik dengan mentor agronomis/amil zakat guna menjamin pemanfaatan zakat yang produktif dan berkelanjutan.
-
+1. **🌱 Beranda (Dashboard):** Memuat status bantuan aktif (Fase Vegetatif), rekomendasi taktis berbasis *AI Agri-Analytics* (prediksi cuaca & optimasi pupuk), serta proyeksi hasil panen.
+2. **📦 Bantuan:** Transparansi rincian alokasi bantuan non-tunai (bibit unggul, pupuk organik, biopestisida) beserta indikator keberlanjutan ekosistem lahan.
+3. **⛓️ Audit (Blockchain Ledger):** Simulasi catatan transaksi *immutable* yang terekam secara *on-chain* lengkap dengan hash verifikasi (`0x...`) untuk menjamin transparansi dana amil dan mustahik.
+4. **🤖 AI Kelayakan (AI Eligibility Insight):** Transparansi model AI (*Explainable AI*) yang menampilkan *Eligibility Score* (Skor Kelayakan) penerima bantuan disertai alasan logis penentu prioritas mustahik.
+5. **🌿 Eco Dampak (Green Impact Saya):** Rekam jejak digital mengenai dampak positif lahan setelah program berjalan, seperti penurunan penggunaan pupuk kimia dan peningkatan efisiensi air.
+6. **📈 Kemandirian (Perjalanan Kemandirian):** Roadmap vertikal interaktif yang memetakan transformasi ekonomi jangka panjang petani, mendampingi proses transisi dari **Mustahik (Penerima Zakat) ➔ Muzaki (Pemberi Zakat)**.
+7. **💬 Pendampingan (Edukasi & Mentor):** Modul konsultasi interaktif dua arah bersama agronomis serta akses materi edukasi mandiri seputar pertanian berkelanjutan.
 📁 Struktur Dokumen Proyek
 Kode sumber telah dipisahkan secara modular sesuai standar industri (*Separation of Concerns*) menjadi 3 berkas mandiri:
 
 ```bash
-agrizakat_separated/
-├── index.html   # Struktur kerangka aplikasi (HTML5 Semantik)
-├── style.css    # Desain visual & layout smartphone mockup (CSS3)
-└── script.js    # Logika navigasi dinamis & event simulasi (JS ES6)
+📦 AgriZakat
+ ├── 📁 css
+ │    └── 📄 style.css      # Desain responsif, Grid sistem, & tema warna alam (Emerald-Forest)
+ ├── 📁 js
+ │    └── 📄 script.js     # Global controller, view switcher, & simulasi real-time toast
+ ├── 📄 index.html         # Dokumen utama aplikasi (Single Page Application structure)
+ └── 📄 README.md          # Dokumentasi proyek
 ```
 
 🛠️ Cara Menjalankan Prototype
 Prototipe ini dirancang dengan prinsip zero-config (dapat langsung berjalan tanpa perlu melakukan instalasi server lokal, database, atau koneksi internet)[cite: 6].
 
-1. Pastikan berkas index.html, style.css, dan script.js berada di dalam satu folder/direktori yang sama[cite: 6].
+1. Pastikan berkas index.html, style.css, dan script.js berada di dalam satu folder/direktori yang sama.
 2. Buka folder tersebut melalui File Explorer komputer Anda.
 3. Klik dua kali (double-click) pada file index.html.
 4. Aplikasi akan otomatis terbuka dan siap dioperasikan melalui browser pilihan Anda (Google Chrome, Mozilla Firefox, Microsoft Edge, atau Safari.
