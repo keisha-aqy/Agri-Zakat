@@ -1,117 +1,94 @@
-// 1. DAFTARKAN FUNGSI DI GLOBAL SCOPE (DI LUAR IIFE) AGAR ONCLICK HTML BISA LANGSUNG MEMANGGILNYA
-window.switchView = function(viewId, element) {
-    // Cari semua elemen view section
-    const views = {
-        'view-dashboard': document.getElementById('view-dashboard'),
-        'view-bantuan': document.getElementById('view-bantuan'),
-        'view-blockchain': document.getElementById('view-blockchain'),
-        'view-mentor': document.getElementById('view-mentor'),
-        'view-eligibility': document.getElementById('view-eligibility'),
-        'view-greenimpact': document.getElementById('view-greenimpact'),
-        'view-journey': document.getElementById('view-journey')
-    };
+/* =====================================================================
+   AGRIZAKAT — script.js
+   ===================================================================== */
 
-    // Sembunyikan semua view terlebih dahulu
-    Object.values(views).forEach(view => {
-        if (view) view.classList.remove('active');
+/* ── Page Switching ─────────────────────────────────────────────── */
+function enterApp() {
+  document.getElementById('page-landing').style.display = 'none';
+  var app = document.getElementById('page-app');
+  app.style.display = 'flex';
+  // default to dashboard view inside app
+  showView('view-dashboard');
+  activateSnav('view-dashboard');
+  setTimeout(function () { showToast('welcome'); }, 600);
+}
+
+/* ── View Navigation (inside app) ──────────────────────────────── */
+function showView(viewId) {
+  document.querySelectorAll('#page-app .view').forEach(function (v) {
+    v.classList.remove('active');
+  });
+  var target = document.getElementById(viewId);
+  if (target) target.classList.add('active');
+
+  // scroll content area back to top
+  var content = document.getElementById('appContent');
+  if (content) content.scrollTop = 0;
+
+  // blockchain toast
+  if (viewId === 'view-blockchain') {
+    setTimeout(function () { showToast('blockchain'); }, 400);
+  }
+}
+
+/* ── Sub-Nav Active State ───────────────────────────────────────── */
+function activateSnav(viewId) {
+  document.querySelectorAll('.snav-item').forEach(function (item) {
+    item.classList.remove('active');
+  });
+  var match = document.querySelector('.snav-item[data-view="' + viewId + '"]');
+  if (match) match.classList.add('active');
+}
+
+/* ── Combined nav helper called by snav-items ───────────────────── */
+function nav(viewId, el) {
+  showView(viewId);
+  document.querySelectorAll('.snav-item').forEach(function (n) { n.classList.remove('active'); });
+  if (el) el.classList.add('active');
+}
+
+/* ── Feature card clicks also sync the subnav ──────────────────── */
+function navFromCard(viewId) {
+  showView(viewId);
+  activateSnav(viewId);
+}
+
+/* ── Toast ──────────────────────────────────────────────────────── */
+var _toastTimer = null;
+var _blockchainMsgs = [
+  '⛓️ Block baru terverifikasi — zakat produktif tercatat di ledger.',
+  '✅ Smart Contract: distribusi bibit on-chain finalized.',
+  '🔒 Hash 0x9f2e...a33b terkonfirmasi — 12 node.',
+  '📊 Data audit disinkronisasi dengan node utama.',
+  '🔗 Semua transaksi sesuai consensus peer-to-peer.'
+];
+
+function showToast(type) {
+  var el   = document.getElementById('toast');
+  var icon = document.getElementById('toastIcon');
+  var msg  = document.getElementById('toastMsg');
+  if (!el) return;
+
+  if (type === 'blockchain') {
+    icon.textContent = '🔗';
+    var m = _blockchainMsgs[Math.floor(Math.random() * _blockchainMsgs.length)];
+    msg.innerHTML = '<strong>Blockchain Alert:</strong> ' + m;
+  } else {
+    icon.textContent = '🌿';
+    msg.innerHTML = '<strong>AgriZakat</strong> — Sistem zakat digital berbasis AI & Blockchain aktif.';
+  }
+
+  el.classList.add('show');
+  if (_toastTimer) clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(function () { el.classList.remove('show'); }, 3400);
+}
+
+/* ── Init sub-nav click handlers ────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.snav-item').forEach(function (item) {
+    item.addEventListener('click', function () {
+      var viewId = item.getAttribute('data-view');
+      if (viewId) nav(viewId, item);
     });
-    
-    // Tampilkan view target yang dipilih
-    const targetView = document.getElementById(viewId);
-    if (targetView) {
-        targetView.classList.add('active');
-    } else {
-        console.error("View dengan ID " + viewId + " tidak ditemukan.");
-    }
-    
-    // Update class active di elemen navbar
-    const navItems = document.querySelectorAll('.nav-item');
-    navItems.forEach(item => {
-        item.classList.remove('active');
-    });
-    
-    // Set class active pada menu yang diklik
-    if (element) {
-        element.classList.add('active');
-    } else {
-        const matchingNav = document.querySelector(`.nav-item[data-view="${viewId}"]`);
-        if (matchingNav) matchingNav.classList.add('active');
-    }
-    
-    // Auto scroll kembali ke atas agar mulus
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    // Trigger notifikasi blockchain khusus saat masuk ke menu Audit
-    if (viewId === 'view-blockchain' && typeof window.triggerModernToast === 'function') {
-        window.triggerModernToast();
-    }
-};
-
-// 2. LOGIKA LAINNYA TETAP DI DALAM IIFE UNTUK SIMULASI HEARTBEAT & TOAST
-(function() {
-    const navItems = document.querySelectorAll('.nav-item');
-    let toastTimeout = null;
-
-    // Daftarkan fungsi toast ke window agar bisa dipanggil dari luar jika diperlukan
-    window.triggerModernToast = function() {
-        const toastEl = document.getElementById('appToast');
-        if (!toastEl) return;
-        
-        const messages = [
-            "⛓️ Block baru terverifikasi: Zakat Produktif tercatat di ledger.",
-            "✅ Smart Contract: Distribusi bibit dan pupuk on-chain finalized.",
-            "🔒 Transparansi penuh: Hash terbaru 0x9f2e...a33b terkonfirmasi.",
-            "📊 Data audit real-time disinkronisasi dengan Node Utama.",
-            "🔗 Verifikasi silang: Semua data sesuai dengan consensus node."
-        ];
-        
-        const randomMsg = messages[Math.floor(Math.random() * messages.length)];
-        toastEl.innerHTML = `<span>🔔</span> <strong>Blockchain Alert:</strong> ${randomMsg}`;
-        
-        toastEl.style.display = 'flex';
-        toastEl.classList.add('show');
-        
-        if (toastTimeout) clearTimeout(toastTimeout);
-        toastTimeout = setTimeout(() => {
-            toastEl.classList.remove('show');
-            setTimeout(() => { toastEl.style.display = 'none'; }, 200);
-        }, 3500);
-    };
-
-    // Sambungkan event listener alternatif untuk jaga-jaga jika ada klik non-onclick
-    navItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            const viewTarget = item.getAttribute('data-view');
-            if (viewTarget) {
-                window.switchView(viewTarget, item);
-            }
-        });
-    });
-    
-    // Inisialisasi awal saat web dibuka pertama kali
-    const defaultActive = document.querySelector('.nav-item.active');
-    if (defaultActive) {
-        const firstViewId = defaultActive.getAttribute('data-view');
-        window.switchView(firstViewId, defaultActive);
-    } else {
-        const firstNav = document.querySelector('.nav-item');
-        if(firstNav) window.switchView('view-dashboard', firstNav);
-    }
-    
-    // Welcome message toast singkat
-    setTimeout(() => {
-        const toastEl = document.getElementById('appToast');
-        if(toastEl && !window._welcomeToastShown) {
-            window._welcomeToastShown = true;
-            toastEl.innerHTML = `<span>🌿</span> <strong>AgriZakat Dashboard Active</strong> — Transparansi Berbasis AI & Blockchain.`;
-            toastEl.style.display = 'flex';
-            toastEl.classList.add('show');
-            setTimeout(() => {
-                toastEl.classList.remove('show');
-                setTimeout(() => toastEl.style.display = 'none', 200);
-            }, 3000);
-        }
-    }, 600);
-    
-    console.log("AgriZakat Dashboard Multi-Device V2.4 Scope Fixed");
-})();
+  });
+});
